@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using MybookWeb.Models;
 
-namespace MybookWeb.Services    
+namespace MybookWeb.Services
 {
     public class AccountService : IAccount
     {
@@ -51,7 +51,7 @@ namespace MybookWeb.Services
             }
         }
 
-        public async Task<SignInModel> SignIn(LoginDto loginDetails)
+        /*public async Task<SignInModel> SignIn(LoginDto loginDetails)
         {
             SignInModel signInDetails = new SignInModel();
             try
@@ -103,15 +103,13 @@ namespace MybookWeb.Services
             {
                 return signInDetails;
             }
-        }
+        }*/
         public async Task<bool> LoginIn(LoginViewModel loginDetails)
         {
-
             try
             {
                 // check if user exist
                 var checkUser = await _userManager.FindByEmailAsync(loginDetails.Email);
-
                 if (checkUser != null)
                 {
                     //signin user
@@ -120,29 +118,7 @@ namespace MybookWeb.Services
                     if (signInResult.Succeeded)
                     {
                         return true;
-                        //var claim = new List<Claim>
-                        //    {
-                        //    new Claim(ClaimTypes.NameIdentifier, checkUser.Id.ToString()),
-                        //    new Claim(ClaimTypes.Name, checkUser.UserName),
-                        //    new Claim(ClaimTypes.Email , checkUser.Email),
-                        //    new Claim(ClaimTypes.GivenName, checkUser.FullName),
-                        //    };
 
-                        //var principal = new ClaimsPrincipal(new ClaimsIdentity(claim, checkUser.Email));
-
-                        //var props = new AuthenticationProperties();
-                        //props.IsPersistent  = true;
-
-
-                        //await HttpContext.SignAsync(CookieAuthenticationDefaulsts)
-
-                        //signInDetails.Email = checkUser.Email;
-                        //signInDetails.FirstName = checkUser.FirstName;
-                        //signInDetails.LastName = checkUser.LastName;
-                        //signInDetails.Username = checkUser.UserName;
-                        //signInDetails.Token = tokenHandler.WriteToken(token);
-                        //signInDetails.Expires = Expires;
-               
                     }
                 }
                 return false;
@@ -152,5 +128,27 @@ namespace MybookWeb.Services
                 return false;
             }
         }
+        public async Task<bool> Signupp(ApplicationUser user, string password)
+        {
+            try
+            {
+                var checkmail = await _userManager.FindByEmailAsync(user.Email);
+                if (checkmail == null)
+                {
+                    var signUpResult = await _userManager.CreateAsync(user, password);
+                    if (signUpResult.Succeeded)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }
+

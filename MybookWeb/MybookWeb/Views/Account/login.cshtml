@@ -1,4 +1,5 @@
 ﻿@model MybookWeb.Models.LoginViewModel
+
 @{
     //ViewData["Title"] = "Login";
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
@@ -34,24 +35,24 @@
     <input id="login" type="radio" name="tab" />
     <label class="tab_label" for="login">log in</label>
     <input id="signup" type="radio" name="tab" />
-    <label class="tab_label" for="signup">sign up</label>
+    
+    <!--<label class="tab_label" for="signup">sign up</label><-->
     <figure class="reveal_login">
         <p>Please log in with your account.</p>
-        <input asp-for="Email" type="text" placeholder="Email"/>
+        <input asp-for="Email" type="text" placeholder="Email" />
         <span asp-validation-for="Email" class="text-danger"></span>
-        <input asp-for="Password" type="password" placeholder="password"/>
-        <span asp-validation-for="Password" class="text-danger"></span>    
+        <input asp-for="Password" type="password" placeholder="Password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
         <input id="logged_in" type="checkbox" />
-        <label class="content_label" for="logged_in">Keep me logged in</label>
-        <input type="submit" value="Log in" />
-    </figure>
-    <figure class="reveal_signin">
-        <p>You can register a new account.</p>
-        <input type="text" placeholder="Email" />
-        <input type="password" placeholder="password"/>
-        <input type="submit" value="Sign up" />
-        <a asp-controller="Author" asp-action="Index">OMOR</a>
-    </figure>
+        <label class="content_label" for="logged_in">Keep me logged in</label><br />
+        <br /><br /><br />
+        <a asp-controller="Account" asp-action="SignUp" class="tab_label">
+            <h4 class="content_label">Create an account</h4>
+        </a>
+            <input type="submit" value="Log in" />
+</figure>
+
+
 </form>
 
 @section Scripts {

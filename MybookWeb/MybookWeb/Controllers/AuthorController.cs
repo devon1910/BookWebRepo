@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MybookWeb.Entities;
+using MybookWeb.Enums;
 using MybookWeb.Interface;
 using MybookWeb.Models;
 
@@ -33,7 +34,12 @@ namespace MybookWeb.Controllers
 
             if (createAuthor)
             {
+                Alert("Author created successfully.", NotificationType.success);
                 return RedirectToAction("Index");
+            }
+            else
+            {
+                Alert("Author not created!", NotificationType.error);
             }
             return View();
         }
@@ -47,7 +53,12 @@ namespace MybookWeb.Controllers
             var deleteAuthor = await _author.Delete(id);
             if (deleteAuthor)
             {
+                Alert("Author Deleted successfully.", NotificationType.success);
                 return RedirectToAction("Index");
+            }
+            else
+            {
+                Alert("Author not Deleted!", NotificationType.error);
             }
             return View();
         }
@@ -58,7 +69,11 @@ namespace MybookWeb.Controllers
             var editAuthor= await _author.Update(a);
             if (editAuthor && ModelState.IsValid)
             {
+                Alert("Author Edited successfully.", NotificationType.success);
                 return RedirectToAction("Index");
+            }
+            else {
+                Alert("Author not Edited!", NotificationType.error);
             }
             return View();
         }

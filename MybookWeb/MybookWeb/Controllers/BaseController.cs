@@ -11,7 +11,6 @@ namespace MybookWeb.Controllers
 {
     public class BaseController : Controller
     {
-
         public void Alert(string message, NotificationType notificationType)
         {
             var msg = "<script language='javascript'>swal('" + notificationType.ToString().ToUpper() + "', '" + message + "','" + notificationType + "')" + "</script>";

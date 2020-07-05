@@ -10,10 +10,11 @@ namespace MybookWeb.Interface
 {
     public interface IAccount
     {
-        Task<bool> CreateUser(ApplicationUser user, string password);
+       // Task<bool> CreateUser(ApplicationUser user, string password);
 
-        Task<SignInModel> SignIn(LoginDto loginDetails);
+       // Task<SignInModel> SignIn(LoginDto loginDetails);
 
         Task<bool> LoginIn(LoginViewModel loginModel);
+        Task<bool> Signupp(ApplicationUser user, string password);    
     }
 }

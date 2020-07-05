@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MybookWeb.Entities;
+using MybookWeb.Enums;
 using MybookWeb.Interface;
 using MybookWeb.Models;
 
@@ -35,7 +36,12 @@ namespace MybookWeb.Controllers
 
             if (createGenre)
             {
+                Alert("Genre Created successfully.", NotificationType.success);
                 return RedirectToAction("Index");
+            }
+            else
+            {  
+                Alert("Genre not Created!", NotificationType.error);
             }
             return View();
         }
@@ -45,13 +51,19 @@ namespace MybookWeb.Controllers
             return View();
         }
 
-        [HttpDelete]
+        
         public async Task<IActionResult> Delete(int id)
         {
             var deleteGenre = await _genre.Delete(id);
             if (deleteGenre)
             {
+                Alert("Genre Deleted successfully.", NotificationType.success);
+
                 return RedirectToAction("Index");
+            }
+            else {
+                
+                Alert("Genre not Deleted!", NotificationType.error);
             }
             return View();
         }
@@ -62,7 +74,11 @@ namespace MybookWeb.Controllers
             var editGenre = await _genre.Update(g);
             if (editGenre && ModelState.IsValid)
             {
+                Alert("Genre Edited successfully.", NotificationType.success);
                 return RedirectToAction("Index");
+            }
+            else { 
+                Alert("Genre not Edited!", NotificationType.error);
             }
             return View();
         }

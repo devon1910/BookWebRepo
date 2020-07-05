@@ -108,7 +108,7 @@ using MybookWeb.Models;
             WriteLiteral("class=\"card-content collapse show\">\r\n                            <div class=\"card-body\">\r\n                                <div class=\"col-md-12 col-12 align-self-center\">\r\n\r\n                                    ");
             EndContext();
             BeginContext(2365, 146, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b612940ce56d40cf979e4a2fb04674cc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb9e4f223d8640dc82dac8cbd147b0cb", async() => {
                 BeginContext(2464, 43, true);
                 WriteLiteral("<i class=\"mdi mdi-plus-circle\"></i>New Role");
                 EndContext();
@@ -177,7 +177,7 @@ using MybookWeb.Models;
             WriteLiteral("</td>\r\n                                                    \r\n\r\n\r\n                                               \r\n                                                    <td>");
             EndContext();
             BeginContext(3708, 84, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8583338b8c1455fb84672933456cbb3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f93f44abb38542d890b284ae44a5a226", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
@@ -211,7 +211,7 @@ using MybookWeb.Models;
             WriteLiteral("</td>\r\n                                                    <td>");
             EndContext();
             BeginContext(3855, 86, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e89bdb09b8443bfb090fcbb75a09720", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5be58c94e476437aab7b78ced49472a1", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();

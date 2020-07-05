@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MybookWeb.Entities;
+using MybookWeb.Enums;
 using MybookWeb.Interface;
 using MybookWeb.Models;
 
@@ -35,7 +36,12 @@ namespace MybookWeb.Controllers
 
             if (createCategory)
             {
+                Alert("Category Created successfully.", NotificationType.success);
                 return RedirectToAction("Index");
+            }
+            else
+            {
+                Alert("Category not Created!", NotificationType.error);
             }
             return View();
         }
@@ -49,7 +55,12 @@ namespace MybookWeb.Controllers
             var deletecategory = await _category.Delete(id);
             if (deletecategory)
             {
+                Alert("Category Deleted successfully.", NotificationType.success);
                 return RedirectToAction("Index");
+            }
+            else
+            {
+                Alert("Category not Deleted!", NotificationType.error);
             }
             return View();
         }
@@ -60,7 +71,11 @@ namespace MybookWeb.Controllers
             var editCat = await _category.Update(c);
             if (editCat && ModelState.IsValid)
             {
+                Alert("Category Edited successfully.", NotificationType.success);
                 return RedirectToAction("Index");
+            }
+            else {
+                Alert("Category not Edited!", NotificationType.error);
             }
             return View();
         }

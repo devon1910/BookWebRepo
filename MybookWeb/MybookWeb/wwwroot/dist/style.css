@@ -12,6 +12,9 @@
   display: table;
 }
 
+h4 {
+    color: #fff;
+}
 body {
   background: #fff;
   font-size: 14px;

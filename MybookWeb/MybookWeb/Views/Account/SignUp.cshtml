@@ -1,0 +1,45 @@
+﻿@model MybookWeb.Models.SignUpViewModel
+
+@{
+    //ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<!--<form class="form-horizontal form-material" id="loginform" method="POST" asp-action="Login">
+    <input id="login" type="radio" name="tab" />
+    <label class="tab_label" for="login">log in</label>
+    <input id="signup" type="radio" name="tab" />
+    <!--<label class="tab_label" for="signup">sign up</label><-->
+<!--figure class="reveal_login">
+    <p>Please log in with your account.</p>
+    <input asp-for="Email" type="text" placeholder="Email" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+    <input asp-for="Password" type="password" placeholder="Password" />
+    <span asp-validation-for="Password" class="text-danger"></span>
+    <input id="logged_in" type="checkbox" />
+    <label class="content_label" for="logged_in">Keep me logged in</label>
+    <input type="submit" value="Log in" />
+</figure>
+<a asp-controller="Account" asp-action="SignUp">Create an account</a>-->
+
+<form class="form-horizontal form-material" id="Signupform" method="POST" asp-action="SignUp">
+    <!--<input id="login" type="radio" name="tab" />
+     <label class="tab_label" for="login">log in</label>-->
+    <input id="signup" type="radio" name="tab" />
+    <label class="tab_label" for="signup">sign up</label>
+    <figure class="reveal_signin">
+        <p>You can register a new account.</p>
+        <input asp-for="Username" type="text" placeholder="Username" />
+        <span class="text-danger"></span>
+        <input asp-for="Email" type="text" placeholder="Email" />
+        <span class="text-danger"></span>
+        <input asp-for="Password" type="password" placeholder="password" />
+        <br />
+        <br /><br /><br />
+        <a asp-controller="Account" asp-action="login" class="tab_label">
+            <h4 class="content_label">Already have an Account?!</h4>
+        </a>
+        <span class="text-danger"></span>
+        <input type="submit" value="Sign up" />
+    </figure>
+</form>
+

@@ -9,6 +9,7 @@ using MybookWeb.Interface;
 using MybookWeb.Models;
 using MybookWeb.Entities;
 using Publisher = MybookWeb.Entities.Publisher;
+using MybookWeb.Enums;
 
 namespace MybookWeb.Controllers
 {
@@ -31,28 +32,38 @@ namespace MybookWeb.Controllers
             return View();
         }
 
-       /* [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> Create(Publisher p)
         {
             var createPub = await _pub.AddAsync(p);
 
             if (createPub)
             {
+                Alert("Publisher Created successfully.", NotificationType.success);
                 return RedirectToAction("Index");
             }
+            else
+            {   
+                Alert("Publisher not Created!", NotificationType.error);
+            }
             return View();
-        }*/
+        }
         public IActionResult Create()
         {
             return View();
         }
-        [HttpDelete]
+        
         public async Task<IActionResult> Delete(int id)
         {
             var deletePub = await _pub.Delete(id);
             if (deletePub)
             {
+                Alert("Publisher Deleted successfully.", NotificationType.success);
                 return RedirectToAction("Index");
+            }
+            else
+            {
+                 Alert("Publisher not Deleted!", NotificationType.error);
             }
             return View();
         }
@@ -63,7 +74,12 @@ namespace MybookWeb.Controllers
             var editPub = await _pub.Update(p);
             if (editPub && ModelState.IsValid)
             {
+                Alert("Publisher Edited successfully.", NotificationType.success);
                 return RedirectToAction("Index");
+            }
+            else
+            {
+                Alert("Publisher not Edited!", NotificationType.error);
             }
             return View();
         }

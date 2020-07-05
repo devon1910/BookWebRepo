@@ -49,6 +49,7 @@ C:\Users\Ekpokpobe Davidson\source\repos\DavidsonHW5\MybookAPI\MybookWeb\obj\Deb
 C:\Users\Ekpokpobe Davidson\source\repos\DavidsonHW5\MybookAPI\MybookWeb\obj\Debug\netcoreapp2.1\Razor\Views\Genre\Edit.g.cshtml.cs
 C:\Users\Ekpokpobe Davidson\source\repos\DavidsonHW5\MybookAPI\MybookWeb\obj\Debug\netcoreapp2.1\Razor\Views\Publisher\Edit.g.cshtml.cs
 C:\Users\Ekpokpobe Davidson\source\repos\DavidsonHW5\MybookAPI\MybookWeb\obj\Debug\netcoreapp2.1\Razor\Views\Account\login.g.cshtml.cs
-C:\Users\Ekpokpobe Davidson\source\repos\DavidsonHW5\MybookAPI\MybookWeb\obj\Debug\netcoreapp2.1\Razor\Views\Shared\NotificationPanel.g.cshtml.cs
 C:\Users\Ekpokpobe Davidson\source\repos\DavidsonHW5\MybookAPI\MybookWeb\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AccountLayout.g.cshtml.cs
 C:\Users\Ekpokpobe Davidson\source\repos\DavidsonHW5\MybookAPI\MybookWeb\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Loading.g.cshtml.cs
+C:\Users\Ekpokpobe Davidson\source\repos\DavidsonHW5\MybookAPI\MybookWeb\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_NotificationPanel.g.cshtml.cs
+C:\Users\Ekpokpobe Davidson\source\repos\DavidsonHW5\MybookAPI\MybookWeb\obj\Debug\netcoreapp2.1\Razor\Views\Account\SignUp.g.cshtml.cs

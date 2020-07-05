@@ -100,7 +100,7 @@ using MybookWeb.Models;
                             ");
             EndContext();
             BeginContext(1537, 848, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0905d5db57d84a14a623d75c5ca5636e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ded433eab3341bc8bba831bf106793f", async() => {
                 BeginContext(1590, 278, true);
                 WriteLiteral(@"
                                 <div class=""card-block"">
@@ -110,7 +110,7 @@ using MybookWeb.Models;
                                             ");
                 EndContext();
                 BeginContext(1868, 97, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8e4f9167d88249689366a51dd0364426", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "523211e5aa094843a6ae7ad3e7a2b9ce", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
