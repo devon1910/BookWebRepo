@@ -31,7 +31,7 @@ namespace MybookWeb.Services
                 await _context.AddAsync(genre);
                 await _context.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return false;
             }

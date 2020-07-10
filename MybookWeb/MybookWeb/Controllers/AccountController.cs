@@ -56,10 +56,9 @@ namespace MybookWeb.Controllers
                 return View();
             }
             ApplicationUser user = new ApplicationUser();
-            
             user.UserName = u.Username;
             user.Email = u.Email;
-            
+                                                                             
             var signUp = await _account.Signupp(user, u.Password);
 
             if (signUp)

@@ -39,6 +39,18 @@
                                         <fieldset class="form-group">
                                             <input type="text" asp-for="Title" placeholder="Title" class="form-control" id="basicInput">
                                         </fieldset><br />
+                                        <label>Author</label>
+                                        <fieldset class="form-group">
+                                            <select class="form-control" id="basicSelect" asp-for="AuthorId" asp-items="@ViewBag.author">
+                                                <option>Select Option</option>
+                                            </select>
+                                        </fieldset>
+                                        <label>Genre</label>
+                                        <fieldset class="form-group">
+                                            <select class="form-control" id="basicSelect" asp-for="GenreId" asp-items="@ViewBag.genre">
+                                                <option>Select Option</option>
+                                            </select>
+                                        </fieldset><br />
                                         <fieldset class="form-group">
                                             <input type="text" asp-for="ISBN" placeholder="ISBN" class="form-control" id="basicInput">
                                         </fieldset><br />

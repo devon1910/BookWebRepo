@@ -53,6 +53,8 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Title</th>
+                                                <th>Author</th>
+                                                <th>Genre</th>
                                                 <th>ISBN</th>
                                                 <th>YearPublish</th>
                                                 <th>Rating</th>
@@ -69,6 +71,8 @@
                                             <tr>
                                                 <td scope="row">@book.Id</td>
                                                 <td>@book.Title</td>
+                                                <td>@book.Author.Name</td>
+                                                <td>@book.Genre.Name</td>
                                                 <td>@book.ISBN</td>
                                                 <td>@book.YearPublish</td>
                                                 <td>@book.Rating</td>

@@ -30,7 +30,8 @@ namespace MybookWeb.Services
                 await _context.AddAsync(book);
                 await _context.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception e)
+
             {
                 return false;
             }
@@ -53,7 +54,7 @@ namespace MybookWeb.Services
 
         public async Task<IEnumerable<Book>> GetAll()
         {
-            return await _context.Books.ToListAsync();
+            return await _context.Books.Include(a => a.Author).Include(g => g.Genre).ToListAsync();
         }
 
         public async Task<Book> GetById(int Id)
@@ -66,9 +67,16 @@ namespace MybookWeb.Services
         public async Task<bool> Update(Book book)
         {
             var aut = await _context.Books.FindAsync(book.Id);
+
             if (aut != null)
             {
-               
+                aut.Title = book.Title;
+                aut.GenreId = book.GenreId;
+                aut.AuthorId = book.AuthorId;
+                aut.ISBN = book.ISBN;
+                aut.Rating = book.Rating;
+                aut.Summary = book.Summary;
+                aut.YearPublish = book.YearPublish;
                 aut.Title = book.Title;
                 aut.CreatedBy = aut.CreatedBy;
 
