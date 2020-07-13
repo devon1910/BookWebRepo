@@ -33,7 +33,7 @@
                             <div class="card-header">
                                 <h4 class="card-title">Edit Book</h4>
                             </div>
-                            <form asp-action="Create" method="post" class="mt-4">
+                            <form asp-action="Edit" method="post" class="mt-4">
                                 <div class="card-block">
                                     <div class="card-body">
                                         <fieldset class="form-group">
@@ -50,7 +50,13 @@
                                             <select class="form-control" id="basicSelect" asp-for="GenreId" asp-items="@ViewBag.genre">
                                                 <option>Select Option</option>
                                             </select>
-                                        </fieldset><br />
+                                        </fieldset>
+                                        <label>Publisher</label>
+                                        <fieldset class="form-group">
+                                            <select class="form-control" id="basicSelect" asp-for="PublisherId" asp-items="@ViewBag.pub">
+                                                <option>Select Option</option>
+                                            </select>
+                                        </fieldset>
                                         <fieldset class="form-group">
                                             <input type="text" asp-for="ISBN" placeholder="ISBN" class="form-control" id="basicInput">
                                         </fieldset><br />
@@ -63,12 +69,10 @@
                                         <fieldset class="form-group">
                                             <input type="text" asp-for="Summary" placeholder="Summary" class="form-control" id="basicInput">
                                         </fieldset><br />
-                                        <fieldset class="form-group">
-                                            <input type="text" asp-for="CreatedBy" placeholder="CreatedBy" class="form-control" id="basicInput">
-                                        </fieldset><br />
+
                                     </div>
                                     <button type="submit" class="btn btn-success mr-2">Submit</button>
-                                    <button type="submit" class="btn btn-dark">Cancel</button>
+                                    <a href="Cancel" type="button" class="btn btn-dark">Cancel</a>
                                 </div>
                             </form>
                         </div>

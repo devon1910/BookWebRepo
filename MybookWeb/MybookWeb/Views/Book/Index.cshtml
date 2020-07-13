@@ -55,6 +55,7 @@
                                                 <th>Title</th>
                                                 <th>Author</th>
                                                 <th>Genre</th>
+                                                <th>Publisher</th>
                                                 <th>ISBN</th>
                                                 <th>YearPublish</th>
                                                 <th>Rating</th>
@@ -73,6 +74,7 @@
                                                 <td>@book.Title</td>
                                                 <td>@book.Author.Name</td>
                                                 <td>@book.Genre.Name</td>
+                                                <td>@book.Publisher.Name</td>
                                                 <td>@book.ISBN</td>
                                                 <td>@book.YearPublish</td>
                                                 <td>@book.Rating</td>
@@ -80,7 +82,7 @@
                                                 <td>@book.CreatedBy</td>
                                                 <td>@book.DateCreated</td>
                                                 <td><a class="ft-edit-2" asp-action="Edit" asp-route-id="@book.Id" aria-hidden="false"></a></td>
-                                                <td><a class="ft-delete" asp-action="Delete" asp-route-id="@book.Id" aria-hidden="false"></a></td>
+                                                <td><a class="ft-trash-2" asp-action="Delete" asp-route-id="@book.Id" aria-hidden="false" onclick="Are you sure you want to delete?"></a></td>
                                             </tr>
                                             }
                                         </tbody>

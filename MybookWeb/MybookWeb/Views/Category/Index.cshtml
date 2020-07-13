@@ -1,7 +1,13 @@
 ﻿@model IEnumerable<MybookWeb.Entities.Category>
+@using Microsoft.AspNetCore.Identity;
+@using MybookWeb.Entities
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
 @{
     ViewData["Title"] = "Categories";
 }
+
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-wrapper-before"></div>
@@ -55,7 +61,7 @@
                                                 <th>CategoryName</th>
                                                 <th>Location</th>
                                                 <th>CreatedBy</th>
-
+                                                <th>DateCreated</th>
                                                 <th></th>
                                                 <th></th>
                                             </tr>
@@ -63,15 +69,15 @@
                                         <tbody>
                                             @foreach (var c in Model)
                                             {
-                                            <tr>
-                                                <td scope="row">@c.Id</td>
-                                                <td>@c.CategoryName</td>
-                                                <td>@c.Location</td>
-                                                <td>@c.CreatedBy</td>
-
-                                                <td><a class="ft-edit-2" asp-action="Edit" asp-route-id="@c.Id" aria-hidden="false"></a></td>
-                                                <td><a class="ft-delete" asp-action="Delete" asp-route-id="@c.Id" aria-hidden="false"></a></td>
-                                            </tr>
+                                                <tr>
+                                                    <td scope="row">@c.Id</td>
+                                                    <td>@c.CategoryName</td>
+                                                    <td>@c.Location</td>
+                                                    <td>@UserManager.GetUserName(User)</td>
+                                                    <td>@c.DateCreated</td>
+                                                    <td><a class="ft-edit-2" asp-action="Edit" asp-route-id="@c.Id" aria-hidden="false"></a></td>
+                                                    <td><a class="ft-trash-2" asp-action="Delete" asp-route-id="@c.Id" aria-hidden="false"></a></td>
+                                                </tr>
                                             }
                                         </tbody>
                                     </table>

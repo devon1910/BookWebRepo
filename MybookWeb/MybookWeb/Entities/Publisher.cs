@@ -14,6 +14,18 @@ namespace MybookWeb.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string PublishedBy { get; set; }
-        public DateTime DatePublished { get; set; }
+        private DateTime? dateCreated = null;
+        public DateTime DatePublished   
+        {
+            get
+            {
+                return dateCreated.HasValue
+                   ? dateCreated.Value
+                   : DateTime.Now;
+            }
+
+            set { dateCreated = value; }
+
+        }
     }
 }

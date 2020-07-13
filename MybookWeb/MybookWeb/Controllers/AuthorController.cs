@@ -50,6 +50,7 @@ namespace MybookWeb.Controllers
 
         public async Task <IActionResult> Delete(int id)
         {
+            
             var deleteAuthor = await _author.Delete(id);
             if (deleteAuthor)
             {
@@ -88,11 +89,9 @@ namespace MybookWeb.Controllers
             return View(editAuthor);
         }
 
-
         public  IActionResult Cancel()
         {
            return RedirectToAction("Index","Author");
-           
         }
     }
 }

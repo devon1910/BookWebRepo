@@ -18,15 +18,16 @@ namespace MybookWeb.Controllers
         private IBook _book;
         private IAuthor _author;
         private IGenre _genre;
-
+        private IPublisher _pub;
         
         private readonly UserManager<ApplicationUser> _userManager;
-        public BookController(IBook book, IAuthor author, IGenre genre, UserManager<ApplicationUser> userManager)
+        public BookController(IBook book, IAuthor author, IGenre genre, IPublisher pub, UserManager<ApplicationUser> userManager)
         {
             _book = book;
             _author = author;
             _userManager = userManager;
             _genre = genre;
+            _pub = pub;
         }
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -69,7 +70,14 @@ namespace MybookWeb.Controllers
                 Value = g.Id.ToString(),
                 Text = g.Name
             });
-            
+            var pub = await _pub.GetAll();
+            var pubList = pub.Select(p => new SelectListItem()
+            {
+                Value = p.Id.ToString(),
+                Text = p.Name
+            });
+
+            ViewBag.pub = pubList;
             ViewBag.author = authorList;
             ViewBag.genre = genreList;
             return View();
@@ -115,6 +123,14 @@ namespace MybookWeb.Controllers
                 Text = g.Name
             });
 
+            var pub = await _pub.GetAll();
+            var pubList = pub.Select(p => new SelectListItem()
+            {
+                Value = p.Id.ToString(),
+                Text = p.Name
+            });
+
+            ViewBag.pub = pubList;
             ViewBag.author = authorList;
             ViewBag.genre = genreList;
             //return View();
@@ -135,10 +151,9 @@ namespace MybookWeb.Controllers
             }
             return View();
         }
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Cancel()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return RedirectToAction("Index", "Book");
         }
     }
 }

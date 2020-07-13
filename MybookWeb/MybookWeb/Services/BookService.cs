@@ -54,7 +54,7 @@ namespace MybookWeb.Services
 
         public async Task<IEnumerable<Book>> GetAll()
         {
-            return await _context.Books.Include(a => a.Author).Include(g => g.Genre).ToListAsync();
+            return await _context.Books.Include(a => a.Author).Include(g => g.Genre).Include(p => p.Publisher).ToListAsync();
         }
 
         public async Task<Book> GetById(int Id)
@@ -73,6 +73,7 @@ namespace MybookWeb.Services
                 aut.Title = book.Title;
                 aut.GenreId = book.GenreId;
                 aut.AuthorId = book.AuthorId;
+                aut.PublisherId = book.PublisherId;
                 aut.ISBN = book.ISBN;
                 aut.Rating = book.Rating;
                 aut.Summary = book.Summary;
